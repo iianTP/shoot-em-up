@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://b7ib4nx0hlhee"]
+
+[ext_resource type="Script" uid="uid://diqf28h2rxgjp" path="res://Scripts/GlobeBlast.cs" id="1_r4m3e"]
+
+[node name="Blaster" type="Node2D" unique_id=922466261]
+script = ExtResource("1_r4m3e")
+blastAmount = 6
+maxBlasts = 10
+
+[node name="BlasterTimer" type="Timer" parent="." unique_id=356848580]
+wait_time = 0.3
+
+[connection signal="timeout" from="BlasterTimer" to="." method="_on_blaster_timer_timeout"]

@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://lkmiw7c3pqv0"]
+
+[ext_resource type="PackedScene" uid="uid://c3y77kjoln0k4" path="res://Scenes/character.tscn" id="1_lx80f"]
+[ext_resource type="Script" uid="uid://boifoyn1n3nqo" path="res://Scripts/Fighter.cs" id="2_6p8wg"]
+[ext_resource type="PackedScene" uid="uid://def61r4rl8ri4" path="res://Scenes/orb.tscn" id="3_6p8wg"]
+[ext_resource type="Texture2D" uid="uid://cuhbd4eyf4m37" path="res://Assets/sprite_2.png" id="3_enrk2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_khrw8"]
+atlas = ExtResource("3_enrk2")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0wtf0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_khrw8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0remu"]
+size = Vector2(22, 9)
+
+[node name="Fighter" unique_id=1186032290 node_paths=PackedStringArray("blastTimer") instance=ExtResource("1_lx80f")]
+script = ExtResource("2_6p8wg")
+blastTimer = NodePath("BlastTimer")
+orb = ExtResource("3_6p8wg")
+score = 50
+speed = 50
+lives = 1
+
+[node name="AnimatedSprite2D" parent="." index="0" unique_id=258512668]
+sprite_frames = SubResource("SpriteFrames_0wtf0")
+
+[node name="Area2D" parent="." index="1" unique_id=909002115 groups=["Enemy"]]
+
+[node name="CollisionShape2D" parent="Area2D" index="0" unique_id=1586778909]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_0remu")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." index="2" unique_id=878156838]
+position = Vector2(0, -47)
+
+[node name="BlastTimer" type="Timer" parent="." index="3" unique_id=656168923]
+wait_time = 2.0
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="timeout" from="BlastTimer" to="." method="_on_blast_timer_timeout"]

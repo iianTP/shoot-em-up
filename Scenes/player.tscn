@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://dow6jhf2go7bd"]
+
+[ext_resource type="PackedScene" uid="uid://c3y77kjoln0k4" path="res://Scenes/character.tscn" id="1_6t5aa"]
+[ext_resource type="Script" uid="uid://byy2tx8icafmr" path="res://Scripts/Player.cs" id="1_cvnsp"]
+[ext_resource type="Texture2D" uid="uid://dghpvq31a1hrf" path="res://Assets/sprite_0.png" id="2_6t5aa"]
+[ext_resource type="PackedScene" uid="uid://0n4ur5yq4weq" path="res://Scenes/player_projectile.tscn" id="3_fkybt"]
+[ext_resource type="Texture2D" uid="uid://dq0cuq84h5seb" path="res://Assets/icon_heart.png" id="4_vgqql"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vgqql"]
+atlas = ExtResource("2_6t5aa")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fkybt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vgqql")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6t5aa"]
+
+[node name="Player" unique_id=1186032290 node_paths=PackedStringArray("hearts") instance=ExtResource("1_6t5aa")]
+script = ExtResource("1_cvnsp")
+hearts = [NodePath("CanvasLayer/Heart1"), NodePath("CanvasLayer/Heart2"), NodePath("CanvasLayer/Heart3")]
+projectileScene = ExtResource("3_fkybt")
+speed = 200
+lives = 2
+
+[node name="AnimatedSprite2D" parent="." index="0" unique_id=258512668]
+sprite_frames = SubResource("SpriteFrames_fkybt")
+
+[node name="CollisionShape2D" parent="Area2D" parent_id_path=PackedInt32Array(909002115) index="0" unique_id=1586778909]
+position = Vector2(0, 4)
+shape = SubResource("CircleShape2D_6t5aa")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="2" unique_id=189669390]
+
+[node name="Heart3" type="Sprite2D" parent="CanvasLayer" index="0" unique_id=1043657121]
+position = Vector2(46, 311)
+texture = ExtResource("4_vgqql")
+
+[node name="Heart2" type="Sprite2D" parent="CanvasLayer" index="1" unique_id=1904970699]
+position = Vector2(28, 311)
+texture = ExtResource("4_vgqql")
+
+[node name="Heart1" type="Sprite2D" parent="CanvasLayer" index="2" unique_id=1763882348]
+position = Vector2(10, 311)
+texture = ExtResource("4_vgqql")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

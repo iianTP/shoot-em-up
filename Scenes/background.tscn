@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dybhmpyss5iul"]
+
+[ext_resource type="Shader" uid="uid://c5e2r0u0oahgk" path="res://Shaders/background.gdshader" id="1_pojwb"]
+[ext_resource type="Texture2D" uid="uid://6fkfx0pvhui3" path="res://Assets/Space Background(1).png" id="2_4aqey"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jsrd8"]
+shader = ExtResource("1_pojwb")
+shader_parameter/SPEED = 0.1
+
+[node name="Background" type="Node2D" unique_id=1723984766]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1079652384]
+material = SubResource("ShaderMaterial_jsrd8")
+offset_left = -7.0
+offset_top = -10.0
+offset_right = 207.0
+offset_bottom = 333.0
+texture = ExtResource("2_4aqey")
+stretch_mode = 1

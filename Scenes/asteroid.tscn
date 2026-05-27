@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://7gufds3kxsi5"]
+
+[ext_resource type="PackedScene" uid="uid://c3y77kjoln0k4" path="res://Scenes/character.tscn" id="1_rvlwq"]
+[ext_resource type="Texture2D" uid="uid://cgy4tk3wenduw" path="res://Assets/asteroid.png" id="2_bi0dy"]
+[ext_resource type="Script" uid="uid://cs8kp8epxnmor" path="res://Scripts/Asteroid.cs" id="3_rfhhd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f2ils"]
+atlas = ExtResource("2_bi0dy")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xliy4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f2ils")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fuwye"]
+
+[node name="Asteroid" unique_id=1186032290 instance=ExtResource("1_rvlwq")]
+script = ExtResource("3_rfhhd")
+score = 25
+speed = 100
+
+[node name="AnimatedSprite2D" parent="." index="0" unique_id=258512668]
+sprite_frames = SubResource("SpriteFrames_xliy4")
+
+[node name="Area2D" parent="." index="1" unique_id=909002115 groups=["Enemy"]]
+
+[node name="CollisionShape2D" parent="Area2D" index="0" unique_id=1586778909]
+shape = SubResource("CircleShape2D_fuwye")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." index="2" unique_id=1492227876]
+position = Vector2(0, -46)
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

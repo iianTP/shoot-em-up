@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://bimlgdyi2gvdw"]
+
+[ext_resource type="Script" uid="uid://ckamamgrglfiy" path="res://Scripts/Menu.cs" id="1_xhh6f"]
+[ext_resource type="PackedScene" uid="uid://dybhmpyss5iul" path="res://Scenes/background.tscn" id="2_158mb"]
+[ext_resource type="FontFile" uid="uid://c0hx6p72e0xjk" path="res://Assets/edit-undo.brk.ttf" id="2_cayip"]
+[ext_resource type="PackedScene" uid="uid://sydt7hqip5uj" path="res://Scenes/username_input.tscn" id="2_wwsa2"]
+
+[sub_resource type="Theme" id="Theme_158mb"]
+default_font = ExtResource("2_cayip")
+
+[node name="Menu" type="CanvasLayer" unique_id=1153546026 node_paths=PackedStringArray("play")]
+script = ExtResource("1_xhh6f")
+inputBox = ExtResource("2_wwsa2")
+play = NodePath("VBoxContainer/Play")
+
+[node name="Background" parent="." unique_id=1723984766 instance=ExtResource("2_158mb")]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2072601327]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -28.0
+offset_top = -38.5
+offset_right = 28.0
+offset_bottom = 38.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+
+[node name="Play" type="Button" parent="VBoxContainer" unique_id=1466755185]
+layout_mode = 2
+theme = SubResource("Theme_158mb")
+text = "PLAY"
+
+[node name="Scores" type="Button" parent="VBoxContainer" unique_id=1058792508]
+layout_mode = 2
+theme = SubResource("Theme_158mb")
+text = "SCORES"
+
+[node name="Quit" type="Button" parent="VBoxContainer" unique_id=926718805]
+layout_mode = 2
+theme = SubResource("Theme_158mb")
+text = "QUIT"
+
+[connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/Scores" to="." method="_on_scores_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

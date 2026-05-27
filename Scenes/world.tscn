@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://jfflhfefyur6"]
+
+[ext_resource type="Script" uid="uid://be3v7e1362aux" path="res://Scripts/Main.cs" id="1_5ukr8"]
+[ext_resource type="PackedScene" uid="uid://7gufds3kxsi5" path="res://Scenes/asteroid.tscn" id="2_o06y3"]
+[ext_resource type="PackedScene" uid="uid://dow6jhf2go7bd" path="res://Scenes/player.tscn" id="3_5a7ea"]
+[ext_resource type="PackedScene" uid="uid://lkmiw7c3pqv0" path="res://Scenes/fighter.tscn" id="4_8j60k"]
+[ext_resource type="PackedScene" uid="uid://dybhmpyss5iul" path="res://Scenes/background.tscn" id="4_o06y3"]
+[ext_resource type="PackedScene" uid="uid://5tprc6v6q6d7" path="res://Scenes/globe.tscn" id="5_fo5ed"]
+[ext_resource type="FontFile" uid="uid://c0hx6p72e0xjk" path="res://Assets/edit-undo.brk.ttf" id="7_k7acu"]
+
+[sub_resource type="Theme" id="Theme_0fj1v"]
+default_font = ExtResource("7_k7acu")
+
+[node name="World" type="Node2D" unique_id=1488849901 node_paths=PackedStringArray("scoreUI", "spawnTimer")]
+script = ExtResource("1_5ukr8")
+asteroid = ExtResource("2_o06y3")
+fighter = ExtResource("4_8j60k")
+globe = ExtResource("5_fo5ed")
+scoreUI = NodePath("CanvasLayer/Score")
+spawnTimer = NodePath("SpawnTimer")
+
+[node name="Background" parent="." unique_id=1723984766 instance=ExtResource("4_o06y3")]
+
+[node name="Player" parent="." unique_id=1186032290 instance=ExtResource("3_5a7ea")]
+position = Vector2(97, 272)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1539887611]
+
+[node name="Score" type="RichTextLabel" parent="CanvasLayer" unique_id=598152231]
+offset_right = 192.0
+offset_bottom = 50.0
+theme = SubResource("Theme_0fj1v")
+text = "score: 000000"
+metadata/_edit_use_anchors_ = true
+
+[node name="DifficultyTimer" type="Timer" parent="." unique_id=1552581072]
+wait_time = 10.0
+
+[node name="SpawnTimer" type="Timer" parent="." unique_id=289757879]
+wait_time = 5.0

@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://sydt7hqip5uj"]
+
+[ext_resource type="FontFile" uid="uid://c0hx6p72e0xjk" path="res://Assets/edit-undo.brk.ttf" id="1_dcvjy"]
+
+[sub_resource type="Theme" id="Theme_fsedy"]
+default_font = ExtResource("1_dcvjy")
+
+[sub_resource type="Theme" id="Theme_dcvjy"]
+default_font = ExtResource("1_dcvjy")
+
+[node name="LineEdit" type="LineEdit" unique_id=112766895]
+offset_right = 68.5
+offset_bottom = 31.0
+theme = SubResource("Theme_fsedy")
+placeholder_text = "AAA"
+alignment = 1
+max_length = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1632645895]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -42.25
+offset_top = 21.5
+offset_right = 47.5
+offset_bottom = 72.25
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_dcvjy")
+text = "controles:
+setas - c
+wasd - j"

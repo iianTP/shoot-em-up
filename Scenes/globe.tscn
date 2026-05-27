@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://5tprc6v6q6d7"]
+
+[ext_resource type="PackedScene" uid="uid://c3y77kjoln0k4" path="res://Scenes/character.tscn" id="1_gpk4l"]
+[ext_resource type="Script" uid="uid://vxrurfvplk8w" path="res://Scripts/Globe.cs" id="1_kc167"]
+[ext_resource type="Texture2D" uid="uid://ljsqh5jxnmxg" path="res://Assets/sprite_3.png" id="2_p15m1"]
+[ext_resource type="PackedScene" uid="uid://b7ib4nx0hlhee" path="res://Scenes/globe_blaster.tscn" id="4_gpk4l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vcagg"]
+atlas = ExtResource("2_p15m1")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v8bbg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vcagg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gdeig"]
+radius = 12.0
+
+[node name="Globe" unique_id=1186032290 instance=ExtResource("1_gpk4l")]
+script = ExtResource("1_kc167")
+score = 100
+speed = 1000
+lives = 2
+
+[node name="AnimatedSprite2D" parent="." index="0" unique_id=258512668]
+sprite_frames = SubResource("SpriteFrames_v8bbg")
+
+[node name="CollisionShape2D" parent="Area2D" parent_id_path=PackedInt32Array(909002115) index="0" unique_id=1586778909]
+shape = SubResource("CircleShape2D_gdeig")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." index="2" unique_id=761732965]
+position = Vector2(0, -66)
+
+[node name="MoveTimer" type="Timer" parent="." index="3" unique_id=1256039398]
+wait_time = 3.0
+
+[node name="Blaster" parent="." index="4" unique_id=922466261 instance=ExtResource("4_gpk4l")]
+maxBlasts = 5
+blastTime = 0.2
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
+[connection signal="timeout" from="MoveTimer" to="." method="_on_move_timer_timeout"]

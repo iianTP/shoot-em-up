@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://def61r4rl8ri4"]
+
+[ext_resource type="PackedScene" uid="uid://0gwqs4dp0i61" path="res://Scenes/projectile.tscn" id="1_caui3"]
+[ext_resource type="Texture2D" uid="uid://dck11l536s08a" path="res://Assets/sprite_1.png" id="2_ryljl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4tb7o"]
+radius = 4.031129
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r3x0a"]
+atlas = ExtResource("2_ryljl")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gn4ky"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r3x0a")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Rotate" unique_id=1281017416 instance=ExtResource("1_caui3")]
+
+[node name="Projectile" parent="." index="0" unique_id=1281017416 groups=["EnemyProjectile"]]
+direction = Vector2(0, 1)
+speed = 100
+
+[node name="CollisionShape2D" parent="Projectile" index="0" unique_id=1316983555]
+position = Vector2(0, 0)
+shape = SubResource("CircleShape2D_4tb7o")
+
+[node name="AnimatedSprite2D" parent="Projectile" index="1" unique_id=1584144460]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_gn4ky")
+
+[node name="VisibleOnScreenNotifier2D" parent="Projectile" index="2" unique_id=593523093]
+position = Vector2(0, -28)
+scale = Vector2(0.5, 0.5)

@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://0gwqs4dp0i61"]
+
+[ext_resource type="Script" uid="uid://tk2iq6x51mw0" path="res://Scripts/Projectile.cs" id="1_f8cdk"]
+
+[node name="Rotate" type="Node2D" unique_id=2130566084]
+
+[node name="Projectile" type="Area2D" parent="." unique_id=1281017416]
+script = ExtResource("1_f8cdk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Projectile" unique_id=1316983555]
+position = Vector2(0, -0.5)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Projectile" unique_id=1584144460]
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Projectile" unique_id=593523093]
+
+[connection signal="screen_exited" from="Projectile/VisibleOnScreenNotifier2D" to="Projectile" method="_on_visible_on_screen_notifier_2d_screen_exited"]
