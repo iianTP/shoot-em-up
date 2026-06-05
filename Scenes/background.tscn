@@ -1,19 +1,56 @@
 [gd_scene format=3 uid="uid://dybhmpyss5iul"]
 
 [ext_resource type="Shader" uid="uid://c5e2r0u0oahgk" path="res://Shaders/background.gdshader" id="1_pojwb"]
-[ext_resource type="Texture2D" uid="uid://6fkfx0pvhui3" path="res://Assets/Space Background(1).png" id="2_4aqey"]
+[ext_resource type="Texture2D" uid="uid://c821wxrno78nk" path="res://Assets/Background/void.png" id="2_ltlj5"]
+[ext_resource type="Texture2D" uid="uid://bfluqles0mk4o" path="res://Assets/Background/space-stuff.png" id="3_rymcx"]
+[ext_resource type="Texture2D" uid="uid://c2t8qdeuh8tgu" path="res://Assets/Background/stars.png" id="4_42s4r"]
+[ext_resource type="Texture2D" uid="uid://ob8buanrm88v" path="res://Assets/Background/clouds.png" id="5_kopta"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jsrd8"]
 shader = ExtResource("1_pojwb")
 shader_parameter/SPEED = 0.1
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wi0l6"]
+shader = ExtResource("1_pojwb")
+shader_parameter/SPEED = 0.03
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b4xn0"]
+shader = ExtResource("1_pojwb")
+shader_parameter/SPEED = 0.05
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bdh0s"]
+shader = ExtResource("1_pojwb")
+shader_parameter/SPEED = 0.08
+
 [node name="Background" type="Node2D" unique_id=1723984766]
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1079652384]
+[node name="Void" type="TextureRect" parent="." unique_id=1828461165]
+modulate = Color(0.6190818, 0.6190819, 0.6190818, 1)
 material = SubResource("ShaderMaterial_jsrd8")
-offset_left = -7.0
-offset_top = -10.0
-offset_right = 207.0
-offset_bottom = 333.0
-texture = ExtResource("2_4aqey")
+offset_right = 200.0
+offset_bottom = 320.0
+texture = ExtResource("2_ltlj5")
+stretch_mode = 1
+
+[node name="Stuff" type="TextureRect" parent="." unique_id=472496165]
+modulate = Color(0.7313315, 0.7313315, 0.7313314, 1)
+material = SubResource("ShaderMaterial_wi0l6")
+offset_right = 200.0
+offset_bottom = 320.0
+texture = ExtResource("3_rymcx")
+stretch_mode = 1
+
+[node name="Stars" type="TextureRect" parent="." unique_id=364124528]
+material = SubResource("ShaderMaterial_b4xn0")
+offset_right = 200.0
+offset_bottom = 320.0
+texture = ExtResource("4_42s4r")
+stretch_mode = 1
+
+[node name="Clouds" type="TextureRect" parent="." unique_id=1079652384]
+modulate = Color(0.63539076, 0.63539076, 0.63539076, 1)
+material = SubResource("ShaderMaterial_bdh0s")
+offset_right = 200.0
+offset_bottom = 320.0
+texture = ExtResource("5_kopta")
 stretch_mode = 1
