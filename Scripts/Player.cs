@@ -5,11 +5,13 @@ public partial class Player : Character
 {
 	[Export] private Sprite2D[] hearts;
 	[Export] private PackedScene projectileScene;
+	[Export] private AnimatedSprite2D as2d;
 
 	public override void _Process(double delta)
 	{
 		
 		Move();
+		UpdateSprites();
 		
 		if (Input.IsActionJustPressed("shoot"))
 			Blast();
@@ -19,10 +21,20 @@ public partial class Player : Character
 
 	protected override void Move()
 	{
-		var move = Input.GetVector("left","right","up","down");
+		Vector2 move = Input.GetVector("left","right","up","down");
 		Velocity = move * speed;
 		MoveAndSlide();
 		FixPosition();
+	}
+
+	private void UpdateSprites()
+	{
+		if (Velocity.X < 0)
+			as2d.Play("left");
+		else if (Velocity.X > 0)
+			as2d.Play("right");
+		else
+			as2d.Play("idle");
 	}
 
 	private void FixPosition()
