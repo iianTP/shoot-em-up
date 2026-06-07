@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://dedrv67rsvf0i"]
+
+[ext_resource type="Texture2D" uid="uid://blw8yyg0npyox" path="res://Assets/hearts.png" id="1_452e1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v4aiu"]
+atlas = ExtResource("1_452e1")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jgxw8"]
+atlas = ExtResource("1_452e1")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rycqq"]
+atlas = ExtResource("1_452e1")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6wkup"]
+atlas = ExtResource("1_452e1")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t623b"]
+atlas = ExtResource("1_452e1")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4obt7"]
+atlas = ExtResource("1_452e1")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_atbr1"]
+atlas = ExtResource("1_452e1")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rhnby"]
+atlas = ExtResource("1_452e1")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gdh3h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v4aiu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jgxw8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rycqq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6wkup")
+}],
+"loop": true,
+"name": &"empty",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t623b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4obt7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_atbr1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rhnby")
+}],
+"loop": true,
+"name": &"full",
+"speed": 5.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" unique_id=1168960916]
+sprite_frames = SubResource("SpriteFrames_gdh3h")
+animation = &"full"
+frame_progress = 0.44797823

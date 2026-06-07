@@ -3,9 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://c3y77kjoln0k4" path="res://Scenes/character.tscn" id="1_6t5aa"]
 [ext_resource type="Script" uid="uid://byy2tx8icafmr" path="res://Scripts/Player.cs" id="1_cvnsp"]
 [ext_resource type="PackedScene" uid="uid://0n4ur5yq4weq" path="res://Scenes/player_projectile.tscn" id="3_fkybt"]
-[ext_resource type="Texture2D" uid="uid://dq0cuq84h5seb" path="res://Assets/icon_heart.png" id="4_vgqql"]
 [ext_resource type="Texture2D" uid="uid://b0egnu3e8obwj" path="res://Assets/Player/player-idle.png" id="5_8erm5"]
 [ext_resource type="Texture2D" uid="uid://baqgieco3s5v6" path="res://Assets/Player/player-left.png" id="6_f1ek2"]
+[ext_resource type="PackedScene" uid="uid://dedrv67rsvf0i" path="res://Scenes/heart.tscn" id="7_3smsa"]
 [ext_resource type="Texture2D" uid="uid://ir7cc4rbug5y" path="res://Assets/Player/player-right.png" id="7_tx1dd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gymyn"]
@@ -131,16 +131,16 @@ shape = SubResource("CircleShape2D_6t5aa")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." index="2" unique_id=189669390]
 
-[node name="Heart3" type="Sprite2D" parent="CanvasLayer" index="0" unique_id=1043657121]
-position = Vector2(46, 311)
-texture = ExtResource("4_vgqql")
+[node name="Heart3" parent="CanvasLayer" index="0" unique_id=1168960916 instance=ExtResource("7_3smsa")]
+position = Vector2(86, 302)
+frame_progress = 0.9468421
 
-[node name="Heart2" type="Sprite2D" parent="CanvasLayer" index="1" unique_id=1904970699]
-position = Vector2(28, 311)
-texture = ExtResource("4_vgqql")
+[node name="Heart2" parent="CanvasLayer" index="1" unique_id=1728520747 instance=ExtResource("7_3smsa")]
+position = Vector2(52, 302)
+frame_progress = 0.770689
 
-[node name="Heart1" type="Sprite2D" parent="CanvasLayer" index="2" unique_id=1763882348]
-position = Vector2(10, 311)
-texture = ExtResource("4_vgqql")
+[node name="Heart1" parent="CanvasLayer" index="2" unique_id=1196689621 instance=ExtResource("7_3smsa")]
+position = Vector2(18, 302)
+frame_progress = 0.99696106
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

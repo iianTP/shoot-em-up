@@ -3,9 +3,19 @@ using System;
 
 public partial class Player : Character
 {
-	[Export] private Sprite2D[] hearts;
+	[Export] private AnimatedSprite2D[] hearts;
 	[Export] private PackedScene projectileScene;
 	[Export] private AnimatedSprite2D as2d;
+
+
+	public override void _Ready()
+	{
+		for (int i = 0; i < 3; i++)
+		{
+			hearts[i].Play("full");
+			hearts[i].Frame = i;
+		}
+	}
 
 	public override void _Process(double delta)
 	{
@@ -64,13 +74,13 @@ public partial class Player : Character
 		{
 			TakeDamage(1);
 			area.CallDeferred("free");
-			hearts[lives+1].CallDeferred("free");
+			hearts[lives+1].Play("empty");
 		}
 		if (area.IsInGroup("Enemy"))
 		{
 			TakeDamage(1);
 			area.GetParent().CallDeferred("free");
-			hearts[lives+1].CallDeferred("free");
+			hearts[lives+1].Play("empty");
 		}
 	}
 }
