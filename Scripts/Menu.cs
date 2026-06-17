@@ -32,6 +32,7 @@ public partial class Menu : CanvasLayer
 		if (username.Length == 3)
 		{
 			Data.instance.Username = username;
+			Audio.Instance.PlayMusic();
 			GetTree().ChangeSceneToFile("res://Scenes/world.tscn");
 		}
 	}

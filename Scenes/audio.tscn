@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://64jmooh70v1p"]
+
+[ext_resource type="AudioStream" uid="uid://do0r7d4eyojt" path="res://Assets/Audio/shoot-em.ogg" id="1_c8j57"]
+[ext_resource type="Script" uid="uid://dj17afb3atjv2" path="res://Scripts/Audio.cs" id="1_pess6"]
+[ext_resource type="AudioStream" uid="uid://dbu47ix250lg6" path="res://Assets/Audio/death.ogg" id="2_pess6"]
+[ext_resource type="AudioStream" uid="uid://bp0602mlswaye" path="res://Assets/Audio/shot.ogg" id="3_fqpxi"]
+
+[node name="Audio" type="Node2D" unique_id=803747205 node_paths=PackedStringArray("music", "shot", "death")]
+script = ExtResource("1_pess6")
+music = NodePath("Music/shoot-em")
+shot = NodePath("Sfx/shot")
+death = NodePath("Sfx/death")
+
+[node name="Music" type="Node2D" parent="." unique_id=230054882]
+
+[node name="shoot-em" type="AudioStreamPlayer2D" parent="Music" unique_id=869773376]
+stream = ExtResource("1_c8j57")
+volume_db = 2.0
+attenuation = 0.0
+panning_strength = 0.0
+
+[node name="Sfx" type="Node2D" parent="." unique_id=1536631101]
+
+[node name="death" type="AudioStreamPlayer2D" parent="Sfx" unique_id=1406252394]
+stream = ExtResource("2_pess6")
+volume_db = -5.0
+attenuation = 0.0
+panning_strength = 0.0
+
+[node name="shot" type="AudioStreamPlayer2D" parent="Sfx" unique_id=1665560324]
+stream = ExtResource("3_fqpxi")
+volume_db = -10.0
+attenuation = 0.0
+panning_strength = 0.0

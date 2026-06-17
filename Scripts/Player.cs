@@ -58,6 +58,7 @@ public partial class Player : Character
 	{
 		Node2D projectile = (Node2D)projectileScene.Instantiate();
 		projectile.GlobalPosition = GlobalPosition;
+		Audio.Instance.ShotSfx();
 		GetTree().Root.AddChild(projectile);
 	}
 
@@ -65,6 +66,8 @@ public partial class Player : Character
 	{
 		Data.instance.SaveData();
 		Data.instance.ResetData();
+		Audio.Instance.StopMusic();
+		Audio.Instance.DeathSfx();
 		GetTree().CallDeferred(SceneTree.MethodName.ChangeSceneToFile, "res://Scenes/game_over.tscn");
 	}
 

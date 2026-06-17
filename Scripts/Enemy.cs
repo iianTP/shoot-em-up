@@ -8,6 +8,7 @@ public abstract partial class Enemy : Character
 
 	protected override void Die()
 	{
+		Audio.Instance.DeathSfx();
 		EmitSignal(SignalName.Died,score);
 		CallDeferred("free");
 	}

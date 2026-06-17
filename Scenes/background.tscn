@@ -8,7 +8,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jsrd8"]
 shader = ExtResource("1_pojwb")
-shader_parameter/SPEED = 0.1
+shader_parameter/SPEED = 0.02
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wi0l6"]
 shader = ExtResource("1_pojwb")
