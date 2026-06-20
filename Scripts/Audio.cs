@@ -9,6 +9,7 @@ public partial class Audio : Node2D
 
 	[Export] private AudioStreamPlayer2D music;
 	[Export] private AudioStreamPlayer2D shot;
+	[Export] private AudioStreamPlayer2D hit;
 	[Export] private AudioStreamPlayer2D death;
 
 	public override void _Ready()
@@ -40,6 +41,11 @@ public partial class Audio : Node2D
 	public void ShotSfx()
 	{
 		shot.Play();
+	}
+
+	public void HitSfx()
+	{
+		hit.Play();
 	}
 
 	public void DeathSfx()

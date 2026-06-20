@@ -4,12 +4,14 @@
 [ext_resource type="Script" uid="uid://dj17afb3atjv2" path="res://Scripts/Audio.cs" id="1_pess6"]
 [ext_resource type="AudioStream" uid="uid://dbu47ix250lg6" path="res://Assets/Audio/death.ogg" id="2_pess6"]
 [ext_resource type="AudioStream" uid="uid://bp0602mlswaye" path="res://Assets/Audio/shot.ogg" id="3_fqpxi"]
+[ext_resource type="AudioStream" uid="uid://b7gfoi3uref1k" path="res://Assets/Audio/hit.ogg" id="5_fqpxi"]
 
-[node name="Audio" type="Node2D" unique_id=803747205 node_paths=PackedStringArray("pitchTimer", "music", "shot", "death")]
+[node name="Audio" type="Node2D" unique_id=803747205 node_paths=PackedStringArray("pitchTimer", "music", "shot", "hit", "death")]
 script = ExtResource("1_pess6")
 pitchTimer = NodePath("PitchTimer")
 music = NodePath("Music/shoot-em")
 shot = NodePath("Sfx/shot")
+hit = NodePath("Sfx/hit")
 death = NodePath("Sfx/death")
 
 [node name="Music" type="Node2D" parent="." unique_id=230054882]
@@ -31,6 +33,11 @@ panning_strength = 0.0
 [node name="shot" type="AudioStreamPlayer2D" parent="Sfx" unique_id=1665560324]
 stream = ExtResource("3_fqpxi")
 volume_db = -10.0
+attenuation = 0.0
+panning_strength = 0.0
+
+[node name="hit" type="AudioStreamPlayer2D" parent="Sfx" unique_id=2030784340]
+stream = ExtResource("5_fqpxi")
 attenuation = 0.0
 panning_strength = 0.0
 

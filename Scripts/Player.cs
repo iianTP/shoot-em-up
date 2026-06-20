@@ -78,12 +78,14 @@ public partial class Player : Character
 			TakeDamage(1);
 			area.CallDeferred("free");
 			hearts[lives+1].Play("empty");
+			Audio.Instance.HitSfx();
 		}
 		if (area.IsInGroup("Enemy"))
 		{
 			TakeDamage(1);
 			area.GetParent().CallDeferred("free");
 			hearts[lives+1].Play("empty");
+			Audio.Instance.HitSfx();
 		}
 	}
 }
