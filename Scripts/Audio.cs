@@ -5,6 +5,8 @@ public partial class Audio : Node2D
 {
 	public static Audio Instance { get; private set; }
 
+	[Export] private Timer pitchTimer;
+
 	[Export] private AudioStreamPlayer2D music;
 	[Export] private AudioStreamPlayer2D shot;
 	[Export] private AudioStreamPlayer2D death;
@@ -13,17 +15,26 @@ public partial class Audio : Node2D
 	{
 		Instance = this;
 		music.Finished += PlayMusic;
+		pitchTimer.Timeout += music.Stop;
 	}
+
+	public override void _Process(double delta)
+	{
+		if (!pitchTimer.IsStopped())
+			music.PitchScale = (float)(pitchTimer.TimeLeft / pitchTimer.WaitTime);
+	}
+
 
 
 	public void PlayMusic()
 	{
+		music.PitchScale = 1;
 		music.Play();
 	}
 
 	public void StopMusic()
 	{
-		music.Stop();
+		pitchTimer.Start();
 	}
 
 	public void ShotSfx()

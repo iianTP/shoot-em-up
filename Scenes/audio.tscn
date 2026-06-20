@@ -5,8 +5,9 @@
 [ext_resource type="AudioStream" uid="uid://dbu47ix250lg6" path="res://Assets/Audio/death.ogg" id="2_pess6"]
 [ext_resource type="AudioStream" uid="uid://bp0602mlswaye" path="res://Assets/Audio/shot.ogg" id="3_fqpxi"]
 
-[node name="Audio" type="Node2D" unique_id=803747205 node_paths=PackedStringArray("music", "shot", "death")]
+[node name="Audio" type="Node2D" unique_id=803747205 node_paths=PackedStringArray("pitchTimer", "music", "shot", "death")]
 script = ExtResource("1_pess6")
+pitchTimer = NodePath("PitchTimer")
 music = NodePath("Music/shoot-em")
 shot = NodePath("Sfx/shot")
 death = NodePath("Sfx/death")
@@ -32,3 +33,6 @@ stream = ExtResource("3_fqpxi")
 volume_db = -10.0
 attenuation = 0.0
 panning_strength = 0.0
+
+[node name="PitchTimer" type="Timer" parent="." unique_id=1314850075]
+wait_time = 1.5
