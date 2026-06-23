@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://64jmooh70v1p"]
+
+[ext_resource type="Script" uid="uid://dj17afb3atjv2" path="res://Scripts/Audio.cs" id="1_aicqc"]
+[ext_resource type="AudioStream" uid="uid://do0r7d4eyojt" path="res://Assets/Audio/shoot-em.ogg" id="2_k44sv"]
+[ext_resource type="AudioStream" uid="uid://dbu47ix250lg6" path="res://Assets/Audio/death.ogg" id="3_7t7fv"]
+[ext_resource type="AudioStream" uid="uid://bp0602mlswaye" path="res://Assets/Audio/shot.ogg" id="4_ngyro"]
+[ext_resource type="AudioStream" uid="uid://b7gfoi3uref1k" path="res://Assets/Audio/hit.ogg" id="5_4hbuk"]
+[ext_resource type="AudioStream" uid="uid://bw5ih6r4n3c1j" path="res://Assets/Audio/hover.ogg" id="6_r8mwj"]
+[ext_resource type="AudioStream" uid="uid://dmwpkb7quvsfj" path="res://Assets/Audio/click.ogg" id="7_es2cq"]
+
+[node name="Audio" type="Node2D" unique_id=803747205 node_paths=PackedStringArray("pitchTimer", "music", "shot", "hit", "death", "hover", "click")]
+script = ExtResource("1_aicqc")
+pitchTimer = NodePath("PitchTimer")
+music = NodePath("Music/shoot-em")
+shot = NodePath("Sfx/shot")
+hit = NodePath("Sfx/hit")
+death = NodePath("Sfx/death")
+hover = NodePath("Sfx/hover")
+click = NodePath("Sfx/click")
+
+[node name="Music" type="Node2D" parent="." unique_id=230054882]
+
+[node name="shoot-em" type="AudioStreamPlayer2D" parent="Music" unique_id=869773376]
+stream = ExtResource("2_k44sv")
+volume_db = 2.0
+attenuation = 0.0
+panning_strength = 0.0
+
+[node name="Sfx" type="Node2D" parent="." unique_id=1536631101]
+
+[node name="death" type="AudioStreamPlayer2D" parent="Sfx" unique_id=1406252394]
+stream = ExtResource("3_7t7fv")
+volume_db = -5.0
+attenuation = 0.0
+panning_strength = 0.0
+
+[node name="shot" type="AudioStreamPlayer2D" parent="Sfx" unique_id=1665560324]
+stream = ExtResource("4_ngyro")
+volume_db = -15.0
+attenuation = 0.0
+panning_strength = 0.0
+
+[node name="hit" type="AudioStreamPlayer2D" parent="Sfx" unique_id=2030784340]
+stream = ExtResource("5_4hbuk")
+attenuation = 0.0
+panning_strength = 0.0
+
+[node name="hover" type="AudioStreamPlayer2D" parent="Sfx" unique_id=1948871661]
+stream = ExtResource("6_r8mwj")
+volume_db = 3.0
+attenuation = 0.0
+panning_strength = 0.0
+
+[node name="click" type="AudioStreamPlayer2D" parent="Sfx" unique_id=2029586811]
+stream = ExtResource("7_es2cq")
+volume_db = 3.0
+attenuation = 0.0
+panning_strength = 0.0
+
+[node name="PitchTimer" type="Timer" parent="." unique_id=1314850075]
+wait_time = 1.5

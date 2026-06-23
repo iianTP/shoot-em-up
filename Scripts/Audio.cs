@@ -12,11 +12,15 @@ public partial class Audio : Node2D
 	[Export] private AudioStreamPlayer2D hit;
 	[Export] private AudioStreamPlayer2D death;
 
+	[Export] private AudioStreamPlayer2D hover;
+	[Export] private AudioStreamPlayer2D click;
+
 	public override void _Ready()
 	{
 		Instance = this;
 		music.Finished += PlayMusic;
 		pitchTimer.Timeout += music.Stop;
+		pitchTimer.Timeout += pitchTimer.Stop;
 	}
 
 	public override void _Process(double delta)
@@ -25,7 +29,15 @@ public partial class Audio : Node2D
 			music.PitchScale = (float)(pitchTimer.TimeLeft / pitchTimer.WaitTime);
 	}
 
+	public void HoverSfx()
+	{
+		hover.Play();
+	}
 
+	public void ClickSfx()
+	{
+		click.Play();
+	}
 
 	public void PlayMusic()
 	{

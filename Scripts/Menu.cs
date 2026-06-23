@@ -19,7 +19,7 @@ public partial class Menu : CanvasLayer
 
 	public void _on_scores_pressed()
 	{
-		GetTree().ChangeSceneToFile("res://Scenes/leaderboard.tscn");
+		GetTree().ChangeSceneToFile("res://Scenes/UI/leaderboard.tscn");
 	}
 	
 	public void _on_quit_pressed()

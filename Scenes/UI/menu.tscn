@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://bimlgdyi2gvdw"]
+
+[ext_resource type="Script" uid="uid://ckamamgrglfiy" path="res://Scripts/Menu.cs" id="1_t1b1y"]
+[ext_resource type="PackedScene" uid="uid://sydt7hqip5uj" path="res://Scenes/UI/username_input.tscn" id="2_tjcm1"]
+[ext_resource type="PackedScene" uid="uid://dybhmpyss5iul" path="res://Scenes/background.tscn" id="3_ugp1d"]
+[ext_resource type="PackedScene" uid="uid://jrdbnnvq406i" path="res://Scenes/UI/ui_button.tscn" id="4_rb4ur"]
+
+[node name="Menu" type="CanvasLayer" unique_id=1153546026 node_paths=PackedStringArray("play")]
+script = ExtResource("1_t1b1y")
+inputBox = ExtResource("2_tjcm1")
+play = NodePath("VBoxContainer/Play")
+
+[node name="Background" parent="." unique_id=1723984766 instance=ExtResource("3_ugp1d")]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2072601327]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -28.0
+offset_top = -38.5
+offset_right = 28.0
+offset_bottom = 38.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+
+[node name="Play" parent="VBoxContainer" unique_id=2036309143 instance=ExtResource("4_rb4ur")]
+layout_mode = 2
+
+[node name="Scores" parent="VBoxContainer" unique_id=799723915 instance=ExtResource("4_rb4ur")]
+layout_mode = 2
+text = "SCORES"
+
+[node name="Quit" parent="VBoxContainer" unique_id=689521865 instance=ExtResource("4_rb4ur")]
+layout_mode = 2
+text = "QUIT"
+
+[connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/Scores" to="." method="_on_scores_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

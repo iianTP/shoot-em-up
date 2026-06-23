@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://c3y77kjoln0k4" path="res://Scenes/character.tscn" id="1_gpk4l"]
 [ext_resource type="Script" uid="uid://vxrurfvplk8w" path="res://Scripts/Globe.cs" id="1_kc167"]
 [ext_resource type="Texture2D" uid="uid://ljsqh5jxnmxg" path="res://Assets/sprite_3.png" id="2_p15m1"]
-[ext_resource type="PackedScene" uid="uid://b7ib4nx0hlhee" path="res://Scenes/globe_blaster.tscn" id="4_gpk4l"]
+[ext_resource type="PackedScene" uid="uid://b7ib4nx0hlhee" path="res://Scenes/Enemies/globe_blaster.tscn" id="4_gpk4l"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vcagg"]
 atlas = ExtResource("2_p15m1")
@@ -32,7 +32,9 @@ lives = 2
 [node name="AnimatedSprite2D" parent="." index="0" unique_id=258512668]
 sprite_frames = SubResource("SpriteFrames_v8bbg")
 
-[node name="CollisionShape2D" parent="Area2D" parent_id_path=PackedInt32Array(909002115) index="0" unique_id=1586778909]
+[node name="Area2D" parent="." index="1" unique_id=909002115 groups=["Enemy"]]
+
+[node name="CollisionShape2D" parent="Area2D" index="0" unique_id=1586778909]
 shape = SubResource("CircleShape2D_gdeig")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." index="2" unique_id=761732965]

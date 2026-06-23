@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://0n4ur5yq4weq" path="res://Scenes/player_projectile.tscn" id="3_fkybt"]
 [ext_resource type="Texture2D" uid="uid://b0egnu3e8obwj" path="res://Assets/Player/player-idle.png" id="5_8erm5"]
 [ext_resource type="Texture2D" uid="uid://baqgieco3s5v6" path="res://Assets/Player/player-left.png" id="6_f1ek2"]
-[ext_resource type="PackedScene" uid="uid://dedrv67rsvf0i" path="res://Scenes/heart.tscn" id="7_3smsa"]
+[ext_resource type="PackedScene" uid="uid://dedrv67rsvf0i" path="res://Scenes/UI/heart.tscn" id="7_3smsa"]
 [ext_resource type="Texture2D" uid="uid://ir7cc4rbug5y" path="res://Assets/Player/player-right.png" id="7_tx1dd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gymyn"]

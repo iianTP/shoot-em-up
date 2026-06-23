@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://jrdbnnvq406i"]
+
+[ext_resource type="FontFile" uid="uid://c0hx6p72e0xjk" path="res://Assets/edit-undo.brk.ttf" id="1_tnpna"]
+[ext_resource type="Script" uid="uid://dhv8ohwe331r6" path="res://Scripts/UiButton.cs" id="2_su2x8"]
+
+[sub_resource type="Theme" id="Theme_158mb"]
+default_font = ExtResource("1_tnpna")
+
+[node name="UiButton" type="Button" unique_id=2036309143]
+theme = SubResource("Theme_158mb")
+text = "PLAY"
+script = ExtResource("2_su2x8")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]

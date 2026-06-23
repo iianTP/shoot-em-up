@@ -3,11 +3,9 @@
 [ext_resource type="Script" uid="uid://bfxntypmqc0yx" path="res://Scripts/Leaderboard.cs" id="1_fjik7"]
 [ext_resource type="PackedScene" uid="uid://dybhmpyss5iul" path="res://Scenes/background.tscn" id="2_pobhu"]
 [ext_resource type="FontFile" uid="uid://c0hx6p72e0xjk" path="res://Assets/edit-undo.brk.ttf" id="3_n70i8"]
+[ext_resource type="PackedScene" uid="uid://jrdbnnvq406i" path="res://Scenes/UI/ui_button.tscn" id="4_trr20"]
 
 [sub_resource type="Theme" id="Theme_eg6uk"]
-default_font = ExtResource("3_n70i8")
-
-[sub_resource type="Theme" id="Theme_fjik7"]
 default_font = ExtResource("3_n70i8")
 
 [node name="Leaderboard" type="CanvasLayer" unique_id=486136099 node_paths=PackedStringArray("rtl")]
@@ -30,12 +28,11 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_eg6uk")
 
-[node name="Button" type="Button" parent="." unique_id=1980275439]
-offset_left = 75.0
-offset_top = 243.0
-offset_right = 125.0
-offset_bottom = 274.0
-theme = SubResource("Theme_fjik7")
+[node name="Button" parent="." unique_id=2036309143 instance=ExtResource("4_trr20")]
+offset_left = 80.0
+offset_top = 247.0
+offset_right = 120.0
+offset_bottom = 270.0
 text = "BACK"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

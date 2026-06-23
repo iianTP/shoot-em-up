@@ -3,11 +3,9 @@
 [ext_resource type="Script" uid="uid://rpiokbdxfegg" path="res://Scripts/GameOver.cs" id="1_ek8ke"]
 [ext_resource type="PackedScene" uid="uid://dybhmpyss5iul" path="res://Scenes/background.tscn" id="2_eoghk"]
 [ext_resource type="FontFile" uid="uid://c0hx6p72e0xjk" path="res://Assets/edit-undo.brk.ttf" id="3_14u15"]
+[ext_resource type="PackedScene" uid="uid://jrdbnnvq406i" path="res://Scenes/UI/ui_button.tscn" id="4_w88jv"]
 
 [sub_resource type="Theme" id="Theme_eg6uk"]
-default_font = ExtResource("3_14u15")
-
-[sub_resource type="Theme" id="Theme_j3ryr"]
 default_font = ExtResource("3_14u15")
 
 [node name="GameOver" type="CanvasLayer" unique_id=486136099]
@@ -30,12 +28,11 @@ grow_vertical = 2
 theme = SubResource("Theme_eg6uk")
 text = "gameover"
 
-[node name="Button" type="Button" parent="." unique_id=89633469]
-offset_left = 75.0
-offset_top = 243.0
-offset_right = 125.0
-offset_bottom = 274.0
-theme = SubResource("Theme_j3ryr")
+[node name="Button" parent="." unique_id=2036309143 instance=ExtResource("4_w88jv")]
+offset_left = 80.0
+offset_top = 247.0
+offset_right = 120.0
+offset_bottom = 270.0
 text = "BACK"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

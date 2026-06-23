@@ -68,7 +68,7 @@ public partial class Player : Character
 		Data.instance.ResetData();
 		Audio.Instance.StopMusic();
 		Audio.Instance.DeathSfx();
-		GetTree().CallDeferred(SceneTree.MethodName.ChangeSceneToFile, "res://Scenes/game_over.tscn");
+		GetTree().CallDeferred(SceneTree.MethodName.ChangeSceneToFile, "res://Scenes/UI/game_over.tscn");
 	}
 
 	public override void _on_area_2d_area_entered(Area2D area)

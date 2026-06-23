@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c3y77kjoln0k4" path="res://Scenes/character.tscn" id="1_lx80f"]
 [ext_resource type="Script" uid="uid://boifoyn1n3nqo" path="res://Scripts/Fighter.cs" id="2_6p8wg"]
-[ext_resource type="PackedScene" uid="uid://def61r4rl8ri4" path="res://Scenes/orb.tscn" id="3_6p8wg"]
+[ext_resource type="PackedScene" uid="uid://def61r4rl8ri4" path="res://Scenes/Enemies/orb.tscn" id="3_6p8wg"]
 [ext_resource type="Texture2D" uid="uid://cuhbd4eyf4m37" path="res://Assets/sprite_2.png" id="3_enrk2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_khrw8"]

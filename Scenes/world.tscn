@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://jfflhfefyur6"]
 
 [ext_resource type="Script" uid="uid://be3v7e1362aux" path="res://Scripts/Main.cs" id="1_5ukr8"]
-[ext_resource type="PackedScene" uid="uid://7gufds3kxsi5" path="res://Scenes/asteroid.tscn" id="2_o06y3"]
+[ext_resource type="PackedScene" uid="uid://7gufds3kxsi5" path="res://Scenes/Enemies/asteroid.tscn" id="2_o06y3"]
 [ext_resource type="PackedScene" uid="uid://dow6jhf2go7bd" path="res://Scenes/player.tscn" id="3_5a7ea"]
-[ext_resource type="PackedScene" uid="uid://lkmiw7c3pqv0" path="res://Scenes/fighter.tscn" id="4_8j60k"]
+[ext_resource type="PackedScene" uid="uid://lkmiw7c3pqv0" path="res://Scenes/Enemies/fighter.tscn" id="4_8j60k"]
 [ext_resource type="PackedScene" uid="uid://dybhmpyss5iul" path="res://Scenes/background.tscn" id="4_o06y3"]
-[ext_resource type="PackedScene" uid="uid://5tprc6v6q6d7" path="res://Scenes/globe.tscn" id="5_fo5ed"]
+[ext_resource type="PackedScene" uid="uid://5tprc6v6q6d7" path="res://Scenes/Enemies/globe.tscn" id="5_fo5ed"]
 [ext_resource type="FontFile" uid="uid://c0hx6p72e0xjk" path="res://Assets/edit-undo.brk.ttf" id="7_k7acu"]
 
 [sub_resource type="Theme" id="Theme_0fj1v"]

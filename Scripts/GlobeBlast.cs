@@ -3,7 +3,7 @@ using System;
 
 public partial class GlobeBlast : Node2D
 { 
-	private readonly PackedScene orbScene = GD.Load<PackedScene>("res://Scenes/orb.tscn");
+	private readonly PackedScene orbScene = GD.Load<PackedScene>("res://Scenes/Enemies/orb.tscn");
 	private Timer blasterTimer => GetNode<Timer>("BlasterTimer");
 	
 	[Export] public int blastAmount;
